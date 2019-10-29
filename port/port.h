@@ -18,4 +18,7 @@
 #include "port/port_posix.h"
 #elif defined(OS_WIN)
 #include "port/win/port_win.h"
+#elif defined(OS_DRAGONFLYBSD)
+#include <sys/types.h>
+#include <sys/wait.h>
 #endif

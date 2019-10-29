@@ -21,6 +21,12 @@
 #include "rocksdb/write_batch.h"
 #include "port/port.h"
 
+#if defined(OS_DRAGONFLYBSD)
+#include <sys/types.h>
+#include <sys/wait.h>
+#endif
+
+
 // Some processors does not allow unaligned access to memory
 #if defined(__sparc)
   #define PLATFORM_UNALIGNED_ACCESS_NOT_ALLOWED
